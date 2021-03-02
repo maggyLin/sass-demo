@@ -1,0 +1,87 @@
+/* 嵌套 */
+.main {
+    font: {
+        family: Helvetica, sans-serif;
+        size: 15em;
+        weight: bold;
+    }
+    .greenbox{
+        width: 100px;
+        height: 50px;
+        background: green;
+        p, a {
+            font-size: 20px;
+        }
+    }
+}
+
+/*選擇器*/
+.select {
+    display: block;
+    a {
+        color: #d0b95b;
+        &:hover, &:active, &:focus {
+            color: #a08106;
+            outline: none;
+            text-decoration: none !important;
+        }
+    }
+}
+
+/*變量*/
+$var-color: #FFFFFF;
+$var-font: Helvetica, sans-serif;
+
+.var1{
+    color: $var-color;
+    font: {
+        family: $var-font;
+    }
+}
+
+.var2{
+    color: #000000;
+    a{
+        color: $var-color;
+    }
+}
+
+/* 混合 mixin */
+@mixin font-main {
+    font: {
+      family: Arial;
+      size: 16px;
+      weight: 100;
+    }
+    color: #000;
+}
+/** 引用 mixin **/
+.box p {
+    @include font-main;
+}
+
+/* mixin 參數功能*/
+@mixin border-set($color, $width, $style: solid) {
+    border: {
+        color: $color;
+        width: $width;
+        style: $style;
+    }
+}
+.box div {
+    @include border-set(red, 2px);
+    letter-spacing: 0.5em;
+}
+
+/*繼承 (系統編譯整合，使用共用樣式) */
+.a {
+    display: block;
+    flex-wrap: wrap;
+    background: #d9d9d8;
+    color: #000;
+}
+
+.b {
+    @extend .a;
+    letter-spacing: 0.5em;
+}

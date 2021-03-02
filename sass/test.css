@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* 嵌套 */
+.main {
+  font-family: Helvetica, sans-serif;
+  font-size: 15em;
+  font-weight: bold;
+}
+.main .greenbox {
+  width: 100px;
+  height: 50px;
+  background: green;
+}
+.main .greenbox p, .main .greenbox a {
+  font-size: 20px;
+}
+
+/*選擇器*/
+.select {
+  display: block;
+}
+.select a {
+  color: #d0b95b;
+}
+.select a:hover, .select a:active, .select a:focus {
+  color: #a08106;
+  outline: none;
+  text-decoration: none !important;
+}
+
+/*變量*/
+.var1 {
+  color: #FFFFFF;
+  font-family: Helvetica, sans-serif;
+}
+
+.var2 {
+  color: #000000;
+}
+.var2 a {
+  color: #FFFFFF;
+}
+
+/* 混合 mixin */
+/** 引用 mixin **/
+.box p {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 100;
+  color: #000;
+}
+
+/* mixin 參數功能*/
+.box div {
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
+  letter-spacing: 0.5em;
+}
+
+/*繼承 (系統編譯整合，使用共用樣式) */
+.a, .b {
+  display: block;
+  flex-wrap: wrap;
+  background: #d9d9d8;
+  color: #000;
+}
+
+.b {
+  letter-spacing: 0.5em;
+}
+
+/*# sourceMappingURL=test.css.map */
